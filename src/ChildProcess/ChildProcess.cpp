@@ -47,12 +47,11 @@ void ChildProcess::sig_term_handler(int num)
   std::string buff;
   buff = std::to_string(counter);
   std::cout<<"Buff value "<<buff<<std::endl;
-  write(fd[1], buff.c_str(), buff.size()+1 );
-  close(fd[1]);
+  write(fd[1], buff.c_str(), buff.size()+1 ); 
   exit(1);
 }
 
 ChildProcess::~ChildProcess()
 {
-
+  close(fd[1]);
 }

@@ -68,5 +68,5 @@ void ParentProcess::messg(const std::string& m)
 
 ParentProcess::~ParentProcess()
 {
-
+  close(fd[0]);
 }
