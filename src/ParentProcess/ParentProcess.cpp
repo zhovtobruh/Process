@@ -60,10 +60,7 @@ void ParentProcess::restart(Writer& writer)
   run(writer, current_counter);
 }
 
-void ParentProcess::messg(const std::string& m)
-{
-  std::cout<<m<<std::endl;
-}
+
 
 
 ParentProcess::~ParentProcess()

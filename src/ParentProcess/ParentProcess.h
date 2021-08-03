@@ -1,8 +1,8 @@
-#ifndef PARENTPROCESS 
-#define PARENTPROCESS 
-#include<iostream> 
+#ifndef PARENTPROCESS
+#define PARENTPROCESS
+#include<iostream>
 #include<string>
-#include<signal.h> 
+#include<signal.h>
 #include<unistd.h>
 #include <sys/types.h>
 #include<vector>
@@ -20,7 +20,7 @@ class ParentProcess
      ~ParentProcess();
      void run(Writer& ,int);
      void restart(Writer& );
-     void messg(const std::string& );
+
 
 };
 

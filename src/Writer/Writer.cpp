@@ -7,15 +7,16 @@ Writer::Writer(const std::string& fname, const std::string& const_out)
 {
   if( out_name != const_out)
   {
-    int file_descriptor = open( fname.c_str(), O_CREAT | O_APPEND | O_WRONLY, 
+    int file_descriptor = open( fname.c_str(), O_CREAT | O_APPEND | O_WRONLY,
                                S_IRWXU | S_IRWXO  );
     if( file_descriptor == -1 )
     {
       std::cerr<<"Cannot open file. Exit"<<std::endl;
+      exit(1);
     }
     fd = file_descriptor;
   }else{
-    fd = STDOUT;  
+    fd = STDOUT;
   }
 
 };
@@ -36,6 +37,6 @@ Writer::~Writer()
   if( fd != STDOUT )
   {
     close(fd);
-  }  
+  }
 }
 
